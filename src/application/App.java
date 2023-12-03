@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 public class App extends Application {
     @Override
     public void start(Stage primaryStage) {
-        Store.startServer();
+        Loader.startServer();
         try {
             Parent root = FXMLLoader.load(getClass().getResource("../resources/LoginPage.fxml"));
             Scene scene = new Scene(root);
@@ -17,7 +17,7 @@ public class App extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
 
-            primaryStage.setOnCloseRequest(event -> Store.closeServer());
+            primaryStage.setOnCloseRequest(event -> Loader.closeServer());
         } catch (Exception e) {
             e.printStackTrace();
         }

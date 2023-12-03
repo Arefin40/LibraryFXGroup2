@@ -4,7 +4,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
-import application.Store;
+import application.Loader;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -80,7 +80,7 @@ public class CheckoutRecords implements Initializable {
 
       if (!(inputMemberId == null || inputMemberId.isBlank())) {
          try {
-            Member member = Store.library.findMember(inputMemberId);
+            Member member = Loader.library.findMember(inputMemberId);
             checkOutRecords.addAll(member.getChekOutRecords());
          } catch (InvalidMemberException e) {
             System.out.println(e.getMessage());
@@ -95,7 +95,7 @@ public class CheckoutRecords implements Initializable {
 
       if (!(inputItemId == null || inputItemId.isBlank())) {
          try {
-            Item item = Store.library.findItem(inputItemId);
+            Item item = Loader.library.findItem(inputItemId);
             checkOutRecords.addAll(item.getCheckOutRecords());
          } catch (InvalidItemException e) {
             System.out.println(e.getMessage());
@@ -107,7 +107,7 @@ public class CheckoutRecords implements Initializable {
    @Override
    public void initialize(URL arg0, ResourceBundle arg1) {
       searchBox.managedProperty().bind(searchBox.visibleProperty());
-      if (!Store.isAdmin) {
+      if (!Loader.isAdmin) {
          tableName.setText("My Checkout Records");
          searchBox.setVisible(false);
       }

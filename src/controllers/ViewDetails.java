@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
 
-import application.Store;
+import application.Loader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -43,7 +43,7 @@ public class ViewDetails implements Initializable {
    @FXML
    void checkin(ActionEvent event) {
       try {
-         Store.library.checkIn(itemId);
+         Loader.library.checkIn(itemId);
          display(itemId); // reload
       } catch (InvalidItemException e) {
          System.out.println(e.getMessage());
@@ -54,7 +54,7 @@ public class ViewDetails implements Initializable {
    void checkout(ActionEvent event) {
       String memberId = getInputForMemberid();
       try {
-         Store.library.checkOut(itemId, memberId);
+         Loader.library.checkOut(itemId, memberId);
          display(itemId); // reload
       } catch (CheckedOutException | InvalidItemException | InvalidMemberException e) {
          System.out.println(e.getMessage());
@@ -64,7 +64,7 @@ public class ViewDetails implements Initializable {
    @FXML
    void extendCheckout(ActionEvent event) {
       try {
-         Store.library.extendCheckOut(itemId);
+         Loader.library.extendCheckOut(itemId);
          display(itemId); // reload
       } catch (InvalidItemException | CheckedOutException e) {
          System.out.println(e.getMessage());
@@ -76,7 +76,7 @@ public class ViewDetails implements Initializable {
 
       try {
          // find item
-         Item item = Store.library.findItem(itemId);
+         Item item = Loader.library.findItem(itemId);
 
          // display item
          imageView.setImage(new Image(item.getImageURI()));

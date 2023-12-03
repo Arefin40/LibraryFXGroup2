@@ -1,6 +1,6 @@
 package controllers;
 
-import application.Store;
+import application.Loader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -38,19 +38,19 @@ public class AdminPanel implements Initializable {
 
    @FXML
    void onAddItem(ActionEvent event) {
-      Store.currentPage = "Add Item";
+      Loader.currentPage = "Add Item";
       loadPage("AddItem");
    }
 
    @FXML
    void onAddMember(ActionEvent event) {
-      Store.currentPage = "Add Member";
+      Loader.currentPage = "Add Member";
       loadPage("AddMember");
    }
 
    @FXML
    void showCollection(ActionEvent event) {
-      Store.currentPage = ((Button) event.getSource()).getText();
+      Loader.currentPage = ((Button) event.getSource()).getText();
       loadPage("Collections");
    }
 
@@ -66,7 +66,7 @@ public class AdminPanel implements Initializable {
 
    @Override
    public void initialize(URL location, ResourceBundle resources) {
-      Store.rootContainer = rootContainer;
+      Loader.rootContainer = rootContainer;
       loadPage("Collections");
    }
 
@@ -76,7 +76,7 @@ public class AdminPanel implements Initializable {
          FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/" + pageLocation + ".fxml"));
          Parent page = loader.load();
          pageController = loader.getController();
-         Store.nevigateTo(page);
+         Loader.nevigateTo(page);
       } catch (IOException e) {
          e.printStackTrace();
       }

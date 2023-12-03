@@ -8,7 +8,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import application.Store;
+import application.Loader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -132,7 +132,7 @@ public class AddItem {
         String year = bookPublishYear.getText();
         int publishYear = year.matches("\\d{4}") ? Integer.parseInt(year) : 2000;
         String publisherName = bookPublisher.getText();
-        Store.library.addItem(title, category, authors, publishYear, publisherName, imageURI);
+        Loader.library.addItem(title, category, authors, publishYear, publisherName, imageURI);
     }
 
     private void addPublication(String title, String category) {
@@ -141,13 +141,13 @@ public class AddItem {
         int publishYear = year.matches("\\d{4}") ? Integer.parseInt(year) : 2000;
         String publisherName = pubPublisher.getText();
         boolean isJournalPaper = isJournal.getSelectedToggle().toString().contains("YES");
-        Store.library.addItem(title, category, authors, publishYear, isJournalPaper, publisherName, imageURI);
+        Loader.library.addItem(title, category, authors, publishYear, isJournalPaper, publisherName, imageURI);
     }
 
     private void addMovie(String title, String category) {
         ArrayList<String> directors = new ArrayList<>(Arrays.asList(movieDirectors.getText().split(", ")));
         String year = movieReleaseYear.getText();
         int releaseYear = year.matches("\\d{4}") ? Integer.parseInt(year) : 2000;
-        Store.library.addItem(title, category, directors, releaseYear, imageURI);
+        Loader.library.addItem(title, category, directors, releaseYear, imageURI);
     }
 }

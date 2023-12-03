@@ -3,7 +3,7 @@ package controllers;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import application.Store;
+import application.Loader;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -31,7 +31,7 @@ public class Members implements Initializable {
 
     private ObservableList<Member> getMembers() {
         ObservableList<Member> members = FXCollections.observableArrayList();
-        members.addAll(Store.library.getMembers());
+        members.addAll(Loader.library.getMembers());
         return members;
     }
 

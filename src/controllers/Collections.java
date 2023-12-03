@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import application.Store;
+import application.Loader;
 import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -45,18 +45,18 @@ public class Collections implements Initializable {
 
    private ObservableList<Item> getItems() {
       ObservableList<Item> items = FXCollections.observableArrayList();
-      switch (Store.currentPage) {
+      switch (Loader.currentPage) {
          case "Book":
-            items.addAll(Store.library.findItems("Book"));
+            items.addAll(Loader.library.findItems("Book"));
             break;
          case "Publication":
-            items.addAll(Store.library.findItems("Publication"));
+            items.addAll(Loader.library.findItems("Publication"));
             break;
          case "Movie":
-            items.addAll(Store.library.findItems("Movie"));
+            items.addAll(Loader.library.findItems("Movie"));
             break;
          default:
-            items.addAll(Store.library.getItems());
+            items.addAll(Loader.library.getItems());
             break;
       }
       return items;
@@ -95,7 +95,7 @@ class ViewDetailsButton extends javafx.scene.control.TableCell<Item, Button> {
             Parent page = loader.load();
             ViewDetails controller = loader.getController();
             controller.display(currentItem.getItemId());
-            Store.nevigateTo(page);
+            Loader.nevigateTo(page);
          } catch (IOException e) {
             e.printStackTrace();
          }

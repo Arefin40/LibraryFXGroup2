@@ -1,6 +1,6 @@
 package controllers;
 
-import application.Store;
+import application.Loader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -38,7 +38,7 @@ public class UserPanel implements Initializable {
 
    @FXML
    void showCollection(ActionEvent event) {
-      Store.currentPage = ((Button) event.getSource()).getText();
+      Loader.currentPage = ((Button) event.getSource()).getText();
       loadPage("Collections");
    }
 
@@ -49,7 +49,7 @@ public class UserPanel implements Initializable {
 
    @Override
    public void initialize(URL location, ResourceBundle resources) {
-      Store.rootContainer = rootContainer;
+      Loader.rootContainer = rootContainer;
       loadPage("Collections");
    }
 
@@ -59,7 +59,7 @@ public class UserPanel implements Initializable {
          FXMLLoader loader = new FXMLLoader(getClass().getResource("../resources/" + pageLocation + ".fxml"));
          Parent page = loader.load();
          pageController = loader.getController();
-         Store.nevigateTo(page);
+         Loader.nevigateTo(page);
       } catch (IOException e) {
          e.printStackTrace();
       }

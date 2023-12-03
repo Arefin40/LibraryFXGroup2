@@ -5,7 +5,7 @@ import javafx.scene.layout.VBox;
 import library.DataHandler;
 import library.Library;
 
-public class Store {
+public class Loader {
    public static Library library = null;
    public static VBox rootContainer = null;
    public static String currentPage = "Home";

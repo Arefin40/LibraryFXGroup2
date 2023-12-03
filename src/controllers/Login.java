@@ -1,6 +1,6 @@
 package controllers;
 
-import application.Store;
+import application.Loader;
 import javafx.event.ActionEvent;
 import java.io.IOException;
 import javafx.fxml.FXML;
@@ -20,10 +20,10 @@ public class Login {
       String page = "";
 
       if (type.equals("Login as a Librarian")) {
-         Store.isAdmin = true;
+         Loader.isAdmin = true;
          page = "AdminPanel";
       } else {
-         Store.isAdmin = false;
+         Loader.isAdmin = false;
          page = "UserPanel";
       }
 
