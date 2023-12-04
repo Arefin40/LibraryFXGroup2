@@ -68,6 +68,17 @@ public class AdminPanel implements Initializable {
    public void initialize(URL location, ResourceBundle resources) {
       Loader.rootContainer = rootContainer;
       loadPage("Collections");
+
+      members.managedProperty().bind(members.visibleProperty());
+      addItem.managedProperty().bind(addItem.visibleProperty());
+      addMember.managedProperty().bind(addMember.visibleProperty());
+
+      if (!Loader.isAdmin) {
+         members.setVisible(false);
+         addItem.setVisible(false);
+         addMember.setVisible(false);
+         checkouts.setText("MyCheckouts");
+      }
    }
 
    private Object loadPage(String pageLocation) {
