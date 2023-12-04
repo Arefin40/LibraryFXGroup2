@@ -17,18 +17,10 @@ public class Login {
    @FXML
    void login(ActionEvent event) {
       String type = ((Button) event.getSource()).getText();
-      String page = "";
-
-      if (type.equals("Login as a Librarian")) {
-         Loader.isAdmin = true;
-         page = "AdminPanel";
-      } else {
-         Loader.isAdmin = false;
-         page = "UserPanel";
-      }
+      Loader.isAdmin = type.equals("Login as a Librarian");
 
       try {
-         Parent root = FXMLLoader.load(getClass().getResource("../resources/" + page + ".fxml"));
+         Parent root = FXMLLoader.load(getClass().getResource("../resources/SidebarNavigation.fxml"));
          Scene scene = new Scene(root);
          stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
          stage.setScene(scene);

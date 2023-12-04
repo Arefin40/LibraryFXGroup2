@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1350.0" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AdminPanel">
+<HBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1350.0" stylesheets="@../application/application.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SidebarNavigation">
    <children>
       <VBox id="admin" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="300.0" spacing="40.0" style="-fx-background-color: #2E4053; -fx-border-color: #1C2833;">
          <children>
