@@ -18,7 +18,7 @@ import javafx.stage.Stage;
 public class AdminPanel implements Initializable {
 
    @FXML
-   private Button allCollection, book, movie, publication, checkouts, members, addItem, addMember, logoutBtn;
+   private Button checkouts, members, addItem, addMember;
 
    @FXML
    private VBox rootContainer;

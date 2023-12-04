@@ -20,22 +20,22 @@
                   </Label>
                   <VBox alignment="CENTER" prefHeight="222.0" prefWidth="298.0" spacing="12.0">
                      <children>
-                        <Button fx:id="allCollection" layoutX="79.0" layoutY="10.0" mnemonicParsing="false" onAction="#showCollection" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: none; -fx-border-color: #EB984E; -fx-border-radius: 50%;" text="All Collection" textFill="WHITE">
+                        <Button layoutX="79.0" layoutY="10.0" mnemonicParsing="false" onAction="#showCollection" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: none; -fx-border-color: #EB984E; -fx-border-radius: 50%;" text="All Collection" textFill="WHITE">
                            <font>
                               <Font name="Bookshelf Symbol 7" size="16.0" />
                            </font>
                         </Button>
-                        <Button fx:id="book" mnemonicParsing="false" onAction="#showCollection" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: none; -fx-border-color: #EB984E; -fx-border-radius: 50%;" text="Book" textFill="WHITE">
+                        <Button mnemonicParsing="false" onAction="#showCollection" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: none; -fx-border-color: #EB984E; -fx-border-radius: 50%;" text="Book" textFill="WHITE">
                            <font>
                               <Font name="Bookshelf Symbol 7" size="16.0" />
                            </font>
                         </Button>
-                        <Button fx:id="publication" layoutX="84.0" layoutY="125.0" mnemonicParsing="false" onAction="#showCollection" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: none; -fx-border-color: #EB984E; -fx-border-radius: 50%;" text="Publication" textFill="WHITE">
+                        <Button layoutX="84.0" layoutY="125.0" mnemonicParsing="false" onAction="#showCollection" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: none; -fx-border-color: #EB984E; -fx-border-radius: 50%;" text="Publication" textFill="WHITE">
                            <font>
                               <Font name="Bookshelf Symbol 7" size="16.0" />
                            </font>
                         </Button>
-                        <Button fx:id="movie" layoutX="84.0" layoutY="141.0" mnemonicParsing="false" onAction="#showCollection" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: none; -fx-border-color: #EB984E; -fx-border-radius: 50%;" text="Movie" textFill="WHITE">
+                        <Button layoutX="84.0" layoutY="141.0" mnemonicParsing="false" onAction="#showCollection" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: none; -fx-border-color: #EB984E; -fx-border-radius: 50%;" text="Movie" textFill="WHITE">
                            <font>
                               <Font name="Bookshelf Symbol 7" size="16.0" />
                            </font>
@@ -66,7 +66,7 @@
                         <Font name="Bookshelf Symbol 7" size="18.0" />
                      </font>
                   </Button>
-                  <Button fx:id="logoutBtn" layoutX="79.0" layoutY="257.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #EB984E; -fx-background-radius: 30px;" text="LogOut" textFill="WHITE">
+                  <Button layoutX="79.0" layoutY="257.0" mnemonicParsing="false" onAction="#logOut" prefHeight="40.0" prefWidth="160.0" style="-fx-background-color: #EB984E; -fx-background-radius: 30px;" text="LogOut" textFill="WHITE">
                      <font>
                         <Font name="Bookshelf Symbol 7" size="18.0" />
                      </font>
